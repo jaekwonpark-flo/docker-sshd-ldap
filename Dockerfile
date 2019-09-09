@@ -9,6 +9,7 @@ RUN apt-get update \
 ADD entrypoint.sh record_ssh.sh /usr/local/bin/
 ADD ldap_auth.sh /ldap_auth/
 ADD userlist.sh /etc/profile.d/
+ADD protocols /etc/
 
 RUN mkdir -p /var/run/sshd && chmod u+x /usr/local/bin/*.sh && chmod -R 755 /ldap_auth && chmod a+x /usr/local/bin/record_ssh.sh /etc/profile.d/userlist.sh
 
